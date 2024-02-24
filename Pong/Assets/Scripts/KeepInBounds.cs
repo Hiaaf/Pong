@@ -17,9 +17,9 @@ public class KeepInBounds : MonoBehaviour
 	{
 		Vector3 viewPos = transform.position;
 		viewPos.x = Mathf.Clamp(
-			viewPos.x, -1 * _screenBounds.x + _objectSize.x / 2, _screenBounds.x - _objectSize.x / 2);
+			viewPos.x, -_screenBounds.x + _objectSize.x / 2, _screenBounds.x - _objectSize.x / 2);
 		viewPos.y = Mathf.Clamp(
-			viewPos.y, -1 * _screenBounds.y + _objectSize.y / 2, _screenBounds.y - _objectSize.y / 2);
+			viewPos.y, -_screenBounds.y + _objectSize.y / 2, _screenBounds.y - _objectSize.y / 2);
 		transform.position = viewPos;
 	}
 }
