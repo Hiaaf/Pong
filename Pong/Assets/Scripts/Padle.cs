@@ -29,7 +29,6 @@ public class Padle : MonoBehaviour
 				{
 					velocity = Vector2.down;
 				}
-
 				break;
 
 			case ControlType.Bot:
