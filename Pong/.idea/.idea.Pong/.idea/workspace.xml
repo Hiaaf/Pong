@@ -7,7 +7,6 @@
     <list default="true" id="8fbdc8c7-7b95-4be8-952a-f28bf56abaa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pong/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pong/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Padle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Padle.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +101,7 @@
       <workItem from="1709245854404" duration="202000" />
       <workItem from="1709246101781" duration="413000" />
       <workItem from="1709246841058" duration="1254000" />
+      <workItem from="1709311487361" duration="1162000" />
     </task>
     <servers />
   </component>
