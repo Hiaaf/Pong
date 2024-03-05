@@ -4,38 +4,36 @@ using Random = UnityEngine.Random;
 
 public class Padle : MonoBehaviour
 {
-	[Serializable]
-	private enum ControlType
-	{
-		Player,
-		Bot
-	}
+  [SerializeField] private ControlType controlType;
+  [SerializeField] private float speed = 10;
 
-	[SerializeField] private ControlType controlType;
-	[SerializeField] private float speed = 10;
+  private void Update()
+  {
+    Vector2 velocity = Vector2.zero;
 
-	private void Update()
-	{
-		Vector2 velocity = Vector2.zero;
+    switch (controlType)
+    {
+      case ControlType.Player:
+        if (Input.GetKey(KeyCode.UpArrow))
+          velocity = Vector2.up;
+        else if (Input.GetKey(KeyCode.DownArrow)) velocity = Vector2.down;
+        break;
 
-		switch (controlType)
-		{
-			case ControlType.Player:
-				if (Input.GetKey(KeyCode.UpArrow))
-				{
-					velocity = Vector2.up;
-				}
-				else if (Input.GetKey(KeyCode.DownArrow))
-				{
-					velocity = Vector2.down;
-				}
-				break;
+      case ControlType.Bot:
+        velocity = new Vector2(0, Random.Range(-1, 1 + 1));
+        break;
+      
+      default:
+        throw new NotImplementedException();
+    }
 
-			case ControlType.Bot:
-				velocity = new Vector2(0, Random.Range(-1, 1 + 1));
-				break;
-		}
+    transform.position += (Vector3)velocity * speed * Time.deltaTime;
+  }
 
-		transform.position += (Vector3)velocity * speed * Time.deltaTime;
-	}
+  [Serializable]
+  private enum ControlType
+  {
+    Player,
+    Bot
+  }
 }
