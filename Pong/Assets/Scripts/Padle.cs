@@ -9,6 +9,11 @@ public class Padle : MonoBehaviour
 
   private void Update()
   {
+    Movement();
+  }
+
+  private void Movement()
+  {
     Vector2 velocity = Vector2.zero;
 
     switch (controlType)
@@ -29,7 +34,8 @@ public class Padle : MonoBehaviour
 
     transform.position += (Vector3)velocity * speed * Time.deltaTime;
   }
-
+  
+  
   [Serializable]
   private enum ControlType
   {
