@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Paddle : MonoBehaviour
@@ -15,18 +14,18 @@ public class Paddle : MonoBehaviour
         switch (playerType)
         {
             case PlayerType.Player:
-                float vertical = Input.GetAxisRaw(axis);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0, vertical) * speed;
+                float verticalP = Input.GetAxisRaw(axis);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, verticalP) * speed;
                 break;
             case PlayerType.Bot:
-                transform.position = Vector2.MoveTowards(
-                    transform.position,
-                    new Vector2(transform.position.x, target.transform.position.y),
-                    speed);
+                float verticalB = target.transform.position.y - transform.position.y;
+                float verticalBSign = Mathf.Sign(verticalB);
+                verticalB = Mathf.Clamp(Mathf.Abs(verticalB), 0, speed);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(0, verticalB * verticalBSign) * speed;
                 break;
         }
     }
-
+    
     [Serializable]
     private enum PlayerType
     {

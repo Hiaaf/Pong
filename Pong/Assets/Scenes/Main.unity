@@ -180,9 +180,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5224534204445379168, guid: 71c338bbc93e16e4381667354a4c3924, type: 3}
+      propertyPath: floor
+      value: 
+      objectReference: {fileID: 1889865321}
+    - target: {fileID: 5224534204445379168, guid: 71c338bbc93e16e4381667354a4c3924, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 2066266074}
+    - target: {fileID: 5224534204445379168, guid: 71c338bbc93e16e4381667354a4c3924, type: 3}
+      propertyPath: ceiling
+      value: 
+      objectReference: {fileID: 1351966032}
     - target: {fileID: 5224534204445379168, guid: 71c338bbc93e16e4381667354a4c3924, type: 3}
       propertyPath: playerType
       value: 1
@@ -388,39 +396,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &679583459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 679583460}
-  m_Layer: 0
-  m_Name: TETOS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &679583460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679583459}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1351966033}
-  - {fileID: 1889865322}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802178957
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +408,7 @@ GameObject:
   - component: {fileID: 802178960}
   - component: {fileID: 802178959}
   m_Layer: 0
-  m_Name: Esquerda
+  m_Name: ParedeEsquerda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -563,7 +538,7 @@ GameObject:
   - component: {fileID: 1351966035}
   - component: {fileID: 1351966034}
   m_Layer: 0
-  m_Name: Cima
+  m_Name: ParedeCima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -582,7 +557,7 @@ Transform:
   m_LocalScale: {x: 18, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 679583460}
+  m_Father: {fileID: 1393304398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1351966034
 BoxCollider2D:
@@ -712,6 +687,76 @@ Transform:
   m_Children:
   - {fileID: 802178958}
   - {fileID: 2002704714}
+  - {fileID: 1351966033}
+  - {fileID: 1889865322}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1415624081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415624084}
+  - component: {fileID: 1415624083}
+  - component: {fileID: 1415624082}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1415624082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415624081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1415624083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415624081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1415624084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415624081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889865321
@@ -726,7 +771,7 @@ GameObject:
   - component: {fileID: 1889865324}
   - component: {fileID: 1889865323}
   m_Layer: 0
-  m_Name: Baixo
+  m_Name: ParedeBaixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -745,7 +790,7 @@ Transform:
   m_LocalScale: {x: 18, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 679583460}
+  m_Father: {fileID: 1393304398}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1889865323
 BoxCollider2D:
@@ -856,7 +901,7 @@ GameObject:
   - component: {fileID: 2002704716}
   - component: {fileID: 2002704715}
   m_Layer: 0
-  m_Name: Direita
+  m_Name: ParedeDireita
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1143,6 +1188,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1393304398}
-  - {fileID: 679583460}
   - {fileID: 328509338}
   - {fileID: 2066266079}
+  - {fileID: 1415624084}
